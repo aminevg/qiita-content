@@ -1,0 +1,22 @@
+{
+  "name": "qiita-content",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "qiita": "qiita",
+    "publish": "qiita publish --all --root .",
+    "login": "qiita login",
+    "new": "qiita new",
+    "preview": "qiita preview"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@qiita/qiita-cli": "^1.6.2"
+  }
+}

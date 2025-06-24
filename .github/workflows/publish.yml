@@ -1,0 +1,43 @@
+# Please set 'QIITA_TOKEN' secret to your repository
+name: Publish articles
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish_articles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - name: Publish articles
+        run: qiita publish --all --root .
+        env:
+          QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
+        shell: bash
+      - name: Commit and push diff # Not executed recursively even if `push` is triggered. See https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#triggering-a-workflow-from-a-workflow
+        run: |
+          git add ./public/*
+          if ! git diff --staged --exit-code --quiet; then
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m "${COMMIT_MESSAGE}"
+            git push
+          fi
+        shell: bash
+        env:
+          COMMIT_MESSAGE: "Updated by qiita-cli"
