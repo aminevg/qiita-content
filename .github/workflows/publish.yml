@@ -25,7 +25,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install
       - name: Publish articles
-        run: qiita publish --all --root .
+        run: bun run publish
         env:
           QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
         shell: bash
