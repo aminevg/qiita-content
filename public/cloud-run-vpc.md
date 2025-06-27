@@ -1,14 +1,14 @@
 ---
 title: Terraformを使ってVPC内のCloud Runサービス間で通信させる
 tags:
+  - IaC
+  - vpc
+  - Terraform
   - GoogleCloud
   - CloudRun
-  - VPC
-  - Terraform
-  - IaC
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-06-27T16:26:55+09:00'
+id: 4912c95b795c6739d703
 organization_url_name: null
 slide: false
 ignorePublish: false
