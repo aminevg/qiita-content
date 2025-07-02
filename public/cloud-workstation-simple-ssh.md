@@ -1,13 +1,13 @@
 ---
 title: ローカルエディタからワンクリックでGoogle Cloud Workstationに接続する方法
 tags:
-  - GoogleCloud
-  - CloudWorkstations
   - SSH
   - netcat
+  - GoogleCloud
+  - CloudWorkstations
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-07-02T22:43:33+09:00'
+id: 27f55b1809b6629567f6
 organization_url_name: null
 slide: false
 ignorePublish: false
