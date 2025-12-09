@@ -1,12 +1,12 @@
 ---
-title: "Google Cloud Workstations入門: 安全かつ再現可能な開発環境の作り方"
+title: 'Google Cloud Workstations入門: 安全かつ再現可能な開発環境の作り方'
 tags:
+  - SSH
   - GoogleCloud
   - CloudWorkstations
-  - SSH
 private: true
-updated_at: ""
-id: null
+updated_at: '2025-12-09T16:15:45+09:00'
+id: b953ae647c81eef59e95
 organization_url_name: null
 slide: false
 ignorePublish: false
