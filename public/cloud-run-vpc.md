@@ -7,7 +7,7 @@ tags:
   - GoogleCloud
   - CloudRun
 private: false
-updated_at: '2025-06-27T16:26:55+09:00'
+updated_at: '2025-08-17T10:16:57+09:00'
 id: 4912c95b795c6739d703
 organization_url_name: null
 slide: false
@@ -187,7 +187,7 @@ resource "google_dns_record_set" "cloud_run_vpc_terraform_sample_dns_record_set_
   type         = "A"
   ttl          = 60
   managed_zone = google_dns_managed_zone.cloud_run_vpc_terraform_sample_dns_zone.name
-  rrdatas      = ["199.36.153.4", "199.36.153.5", "199.36.153.6", "199.36.153.7"] # private.googleapis.com
+  rrdatas      = ["199.36.153.4", "199.36.153.5", "199.36.153.6", "199.36.153.7"] # restricted.googleapis.com
 }
 
 resource "google_dns_record_set" "cloud_run_vpc_terraform_sample_dns_record_set_cname" {
